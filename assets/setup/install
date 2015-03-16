@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-GITLAB_CI_VERSION=7.8.4
+GITLAB_CI_VERSION=master
 
 INSTALL_DIR="/home/gitlab_ci/gitlab-ci"
 DATA_DIR="/home/gitlab_ci/data"
@@ -27,8 +27,8 @@ sudo -u gitlab_ci -H mkdir -p ${DATA_DIR}
 
 # shallow clone gitlab-ci
 echo "Cloning gitlab-ci v.${GITLAB_CI_VERSION}..."
-sudo -u gitlab_ci -H git clone -q -b v${GITLAB_CI_VERSION} --depth 1 \
-  https://github.com/gitlabhq/gitlab-ci.git ${INSTALL_DIR}
+sudo -u gitlab_ci -H git clone -q --depth 1 \
+  https://gitlab.com/gitlab-org/gitlab-ci.git ${INSTALL_DIR}
 
 cd ${INSTALL_DIR}
 
